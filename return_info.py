@@ -4,7 +4,7 @@ import ger_id
 import time
 import re
 fake = Faker('zh_CN')
-f = open("race.txt","r")   #设置文件对象
+f = open("./address_data/nation.txt","r")   #设置文件对象
 line = f.readline()
 f.close()
 line = line[:-3]
@@ -70,7 +70,8 @@ def return_usedtime():
     if random.random() < 0.25:
         date_end = '长期'
     data = date_start + '-' +date_end
-    data = ' '.join(data)
+    data = ''.join(data)
+    data = data.replace(' ','')
     return data
 
 def return_info():
